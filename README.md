@@ -1,118 +1,156 @@
-\# D\*ijkstra.viz — Shortest Path Algorithm Visualizer
+# 🚀 PathViz - Dijkstra Algorithm Visualizer
 
+An interactive web-based visualization tool that demonstrates how **Dijkstra's Shortest Path Algorithm** works on a grid. Users can place obstacles, define source and destination nodes, and watch the algorithm explore nodes and compute the optimal path in real time.
 
+---
 
-An interactive, browser-based visualizer for \*\*Dijkstra's shortest path algorithm\*\*, built with vanilla HTML, CSS, and JavaScript. Draw walls, place start and end points, and watch the algorithm explore the grid in real time before tracing out the shortest path.
+## 🌟 Features
 
+- Interactive grid-based environment
+- Set custom **Start** and **End** nodes
+- Draw and erase obstacles (walls)
+- Real-time visualization of Dijkstra's Algorithm
+- Animated node exploration and path reconstruction
+- Adjustable visualization speed
+- Drag-and-drop repositioning of source and destination nodes
+- Reset path or clear the entire grid
+- Responsive and modern user interface
 
+---
 
-\## Features
+## 🖥️ Demo
 
+Live Demo: [Add GitHub Pages Link Here]
 
+---
 
-\- Interactive grid where you can draw walls by clicking and dragging
+## 📸 Preview
 
-\- Movable Start and End nodes — drag them anywhere on the grid
+<!-- Add screenshots here -->
 
-\- Animated visualization of node exploration order (visited cells)
+![Project Screenshot](screenshot.png)
 
-\- Shortest path reconstruction and highlighting once the end node is reached
+---
 
-\- Adjustable animation speed (1x to 5x)
+## 🛠️ Technologies Used
 
-\- Live status updates, step count, and total distance display
+- HTML5
+- CSS3
+- JavaScript (ES6)
+- DOM Manipulation
+- CSS Animations
 
-\- Toast notifications and keyboard shortcuts for quick interaction
+---
 
-\- Handles unreachable targets gracefully ("No path found")
+## 📚 Algorithm Used
 
+### Dijkstra's Shortest Path Algorithm
 
+The project uses **Dijkstra's Algorithm** to find the shortest path between two nodes in a grid.
 
-\## Algorithm
+### Working
 
+1. Initialize the source node distance as 0.
+2. Store nodes in a Min Priority Queue.
+3. Repeatedly select the node with the minimum distance.
+4. Relax all valid neighboring nodes.
+5. Continue until the destination is reached.
+6. Reconstruct the shortest path using parent pointers.
 
+### Time Complexity
 
-The project implements \*\*Dijkstra's algorithm\*\* using a custom \*\*binary min-heap\*\* as the priority queue, giving efficient O(log n) extraction of the next closest node instead of a naive O(n log n) sort on every iteration. Since all grid edges have equal weight, the algorithm behaves equivalently to a Breadth-First Search, but is implemented in a general weighted form.
+| Operation | Complexity |
+|------------|------------|
+| Dijkstra with Min Heap | O((V + E) log V) |
 
+Where:
 
+- V = Number of vertices (grid cells)
+- E = Number of edges
 
-\## Keyboard Shortcuts
+---
 
+## 🏗️ Project Structure
 
-
-| Key | Action |
-
-|-----|--------|
-
-| `Space` / `Enter` | Run visualization |
-
-| `C` | Clear entire grid |
-
-| `R` | Reset path (keep walls) |
-
-| `1` | Wall tool |
-
-| `2` | Start tool |
-
-| `3` | End tool |
-
-| `4` | Erase tool |
-
-
-
-\## Tech Stack
-
-
-
-\- \*\*HTML5\*\* — structure
-
-\- \*\*CSS3\*\* — custom dark-themed UI, grid layout, and animations
-
-\- \*\*JavaScript (ES6)\*\* — algorithm logic, DOM manipulation, animation scheduling
-
-
-
-No external libraries or frameworks are used.
-
-
-
-\## How It Works
-
-
-
-1\. The grid is generated as a 2D array of cell objects, each tracking its distance, visited state, and previous node.
-
-2\. On clicking \*\*Run\*\*, Dijkstra's algorithm executes instantly on the underlying data, recording the order in which nodes are visited.
-
-3\. This visited order is then replayed visually using staggered timeouts, simulating a wave-like search expanding outward from the start node.
-
-4\. Once the end node is reached, the shortest path is reconstructed by backtracking through stored parent pointers from the end back to the start, then animated separately to highlight the optimal route.
-
-
-
-\## Getting Started
-
-
-
-```bash
-
-git clone https://github.com/your-username/dijkstra-visualizer.git
-
-cd dijkstra-visualizer
-
+```text
+├── index.html
+├── style.css
+├── script.js
+├── README.md
 ```
 
+---
 
+## 🎯 Key Concepts Demonstrated
 
-Open `index.html` in your browser — no build step or dependencies required.
+- Graph Representation using 2D Grid
+- Shortest Path Algorithms
+- Priority Queues (Min Heap)
+- Path Reconstruction using Parent Pointers
+- Graph Traversal
+- Event-Driven Programming
+- DOM Manipulation
+- Algorithm Visualization
 
+---
 
+## 🚀 Getting Started
 
-\## License
+### Clone the Repository
 
+```bash
+git clone https://github.com/your-username/your-repository-name.git
+```
 
+### Open the Project
 
-This project is open source and available under the \[MIT License](LICENSE).
+Simply open:
 
+```text
+index.html
+```
 
+in your browser.
 
+No additional dependencies or installation required.
+
+---
+
+## 📈 Future Improvements
+
+- A* Search Algorithm
+- Breadth First Search (BFS)
+- Depth First Search (DFS)
+- Weighted Nodes
+- Maze Generation Algorithms
+- Mobile Optimization
+- Dark/Light Theme Toggle
+
+---
+
+## 💡 Learning Outcomes
+
+Through this project, I gained hands-on experience with:
+
+- Graph Algorithms
+- Dijkstra's Algorithm
+- Priority Queues and Min Heaps
+- Algorithm Visualization Techniques
+- JavaScript DOM Manipulation
+- Frontend Development using HTML, CSS, and JavaScript
+
+---
+
+## 👨‍💻 Author
+
+**Rama Neeraj Dungala**
+
+IIT Guwahati
+
+GitHub: https://github.com/your-github-username
+
+---
+
+## ⭐ Support
+
+If you found this project useful, consider giving it a ⭐ on GitHub.
