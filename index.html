@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dijkstra Visualizer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <span>D*</span><span>ijkstra</span><span>.viz</span>
+    </div>
+    <div class="tagline">shortest path algorithm visualizer</div>
+  </header>
+
+  <div class="controls">
+    <div class="tool-group">
+      <button class="tool-btn active" data-tool="wall">
+        <div class="dot" style="background:#2a2a3e; border:1px solid #555"></div>Wall
+      </button>
+      <button class="tool-btn" data-tool="start">
+        <div class="dot" style="background:var(--accent)"></div>Start
+      </button>
+      <button class="tool-btn" data-tool="end">
+        <div class="dot" style="background:var(--accent2)"></div>End
+      </button>
+      <button class="tool-btn" data-tool="erase">
+        <div class="dot" style="background:var(--bg); border:1px solid var(--muted)"></div>Erase
+      </button>
+    </div>
+
+    <div class="sep"></div>
+
+    <button class="action-btn" id="runBtn">▶ RUN</button>
+    <button class="action-btn" id="clearBtn">✕ CLEAR</button>
+    <button class="action-btn" id="clearPathBtn" style="background:var(--surface); color:var(--muted); border:1px solid var(--border)">↺ RESET PATH</button>
+
+    <div class="sep"></div>
+
+    <div class="speed-group">
+      <span>SPEED</span>
+      <input type="range" id="speedSlider" min="1" max="5" value="3">
+      <span id="speedLabel">3×</span>
+    </div>
+  </div>
+
+  <div class="status-bar">
+    <div class="status-pill" id="statusPill">
+      <div class="indicator"></div>
+      <span id="statusText">Place walls, set start &amp; end, then run</span>
+    </div>
+    <div class="status-pill" id="stepsPill" style="display:none">
+      <span id="stepsText">—</span>
+    </div>
+    <div class="status-pill" id="distPill" style="display:none">
+      <span id="distText">—</span>
+    </div>
+  </div>
+
+  <div class="legend">
+    <div class="legend-item">
+      <div class="legend-swatch" style="background:rgba(0,229,255,0.15); border:1px solid var(--accent)"></div>Start
+    </div>
+    <div class="legend-item">
+      <div class="legend-swatch" style="background:rgba(255,107,53,0.15); border:1px solid var(--accent2)"></div>End
+    </div>
+    <div class="legend-item">
+      <div class="legend-swatch" style="background:var(--wall); border:1px solid #2a2a3e"></div>Wall
+    </div>
+    <div class="legend-item">
+      <div class="legend-swatch" style="background:rgba(40,10,80,0.8)"></div>Visited
+    </div>
+    <div class="legend-item">
+      <div class="legend-swatch" style="background:rgba(0,100,150,0.5)"></div>Frontier
+    </div>
+    <div class="legend-item">
+      <div class="legend-swatch" style="background:rgba(255,215,0,0.9)"></div>Shortest Path
+    </div>
+  </div>
+
+  <div id="grid-wrapper">
+    <div id="grid"></div>
+  </div>
+
+  <div id="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
